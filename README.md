@@ -7,12 +7,14 @@ All Diagrams are made by me and are tested before i upload.
 ### Project Idea
 
 This project is made to be used in our University course CTIS-477 - System Engineering.
-For this course we have to make a small **Smart Home Automation System** as such i have decided to do the following;
+For this course we have to make a small **Smart Home Automation System**, as such i have decided to do the following;
 
 Have a dashboard panel accessible by a web browser and will use 3 sensors:
-Motion Sensor,
-LDR Sensor,
-Temperature and Humidity Combo Sensor.
+
+- Motion Sensor,
+- LDR Sensor,
+- Temperature and Humidity Combo Sensor.
+
 So what will these sensors do?
 
 - Motion Sensor
@@ -40,6 +42,10 @@ So what will these sensors do?
 - Servo Motor
 - 5mm LDR
 - Breadboard
+
+### Diagrams
+
+- Will be added
 
 ### Used Sources
 
