@@ -69,6 +69,7 @@ So what will these sensors do?
   - [omerwwazap/Raspberry-Pi-GPIO-Usage - Repo](https://github.com/omerwwazap/Raspberry-Pi-GPIO-Usage)  
 - [Circuit Symbols](https://www.electronicshub.org/symbols/)
   - Hey i'm a software engineer and have not used these in ages.
+- [Open-Source Home Automation Platforms](https://randomnerdtutorials.com/9-home-automation-open-source-platforms-for-your-projects/)
 
 ### Resistance calculator
 
