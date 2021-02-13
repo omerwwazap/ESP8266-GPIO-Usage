@@ -79,3 +79,16 @@ So what will these sensors do?
 ### ESP8266 Pin Layout
 
 - [ESP8266 Pinout Reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
+
+### Learning
+
+- [Soil Moisture Sensor Tutorial for Arduino, ESP8266 and ESP32](https://diyi0t.com/soil-moisture-sensor-tutorial-for-arduino-and-esp8266/)
+- [ESP8266 Thing Development Board Hookup Guide - Example Sketch](https://learn.sparkfun.com/tutorials/esp8266-thing-development-board-hookup-guide/example-sketch-blink)
+- [Soil Moisture Sensor Interfacing with NodeMCU](https://www.electronicwings.com/nodemcu/soil-moisture-sensor-interfacing-with-nodemcu)
+- [How to Program NodeMCU on Arduino IDE](https://www.instructables.com/How-to-Program-NodeMCU-on-Arduino-IDE/)
+- [How to Get Started with Arduino](https://www.digikey.com/en/maker/blogs/2018/how-to-get-started-with-arduino)
+- [ESP8266 Thing Development Board Hookup Guide ](https://learn.sparkfun.com/tutorials/esp8266-thing-development-board-hookup-guide/setting-up-arduino)
+- [ESP8266 Soil Moisture Sensor With Arduino IDE](https://www.instructables.com/ESP8266-Soil-Moisture-Sensor-With-Arduino-IDE/)
+- [NodeMCU V3 LoLin ESP8266 Geliştirme Kartı - CP2102](https://www.robotistan.com/nodemcu-lolin-esp8266-gelistirme-karti)
+- [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
+- More to Come
