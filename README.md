@@ -87,7 +87,7 @@ So what will these sensors do?
 - [Soil Moisture Sensor Interfacing with NodeMCU](https://www.electronicwings.com/nodemcu/soil-moisture-sensor-interfacing-with-nodemcu)
 - [How to Program NodeMCU on Arduino IDE](https://www.instructables.com/How-to-Program-NodeMCU-on-Arduino-IDE/)
 - [How to Get Started with Arduino](https://www.digikey.com/en/maker/blogs/2018/how-to-get-started-with-arduino)
-- [ESP8266 Thing Development Board Hookup Guide ](https://learn.sparkfun.com/tutorials/esp8266-thing-development-board-hookup-guide/setting-up-arduino)
+- [ESP8266 Thing Development Board Hookup Guide](https://learn.sparkfun.com/tutorials/esp8266-thing-development-board-hookup-guide/setting-up-arduino)
 - [ESP8266 Soil Moisture Sensor With Arduino IDE](https://www.instructables.com/ESP8266-Soil-Moisture-Sensor-With-Arduino-IDE/)
 - [NodeMCU V3 LoLin ESP8266 Geliştirme Kartı - CP2102](https://www.robotistan.com/nodemcu-lolin-esp8266-gelistirme-karti)
 - [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
