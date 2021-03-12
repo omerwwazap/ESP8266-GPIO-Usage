@@ -8,7 +8,7 @@ void setup() {
 void loop() {
   float sensorValue = analogRead(SensorPin);
   Serial.println(sensorValue);
-  delay(30000);
+  delay(2);
 }  
 
 //https://diyi0t.com/soil-moisture-sensor-tutorial-for-arduino-and-esp8266/
