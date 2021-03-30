@@ -4,6 +4,14 @@ ESP8266 - For Hobby Stuff and System Engineering Course - CTIS477
 
 All Diagrams are made by me and are tested before i upload.
 
+**SLS Dashboard - V1.0**|
+|:-------------------------:|
+![Prototype - V1.0](https://github.com/omerwwazap/ESP8266-GPIO-Usage/blob/main/Project%20Documentation/Screenshot%202021-03-31%20012930.jpg)  |
+
+**SLS Hardware Diagram - V1.0**|
+|:-------------------------:|
+![]()  |
+
 ### Project Idea
 
 This project is made to be used in our University course CTIS-477 - System Engineering.
