@@ -17,8 +17,8 @@ Servo myservo;
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 // Change the credentials below, so your ESP8266 connects to your router
-const char* ssid = "";
-const char* password = "";
+const char* ssid = "AirTies_5341ww1";
+const char* password = "TdWnzbdRi7204";
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
@@ -98,7 +98,7 @@ void callback(char* topic, byte* message, unsigned int length) {
     int pos = map(resultado, 1, 100, 0, 180);
     Serial.println(pos);
     myservo.write(pos);
-    
+
   }
 
   Serial.println();
@@ -171,7 +171,7 @@ void loop() {
 
   now = millis();
   // Publishes new temperature and humidity every 30 seconds
-  if (now - lastMeasure > 10000) {
+  if (now - lastMeasure > 2000) {
     lastMeasure = now;
     // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
     float h = dht.readHumidity();
@@ -205,12 +205,13 @@ void loop() {
 
     // LDR PART
     int ldrStatus = analogRead(ldrPin);
+    Serial.println("ldrStatus: " + ldrStatus);
     if (ldrStatus <= 300) {
       digitalWrite(lamp, HIGH);
-      Serial.println("LDR is DARK, LED is ON, Let There Be Light");
+      Serial.println("LDR is NOT Dark, LED is OFF");
     } else {
       digitalWrite(lamp, LOW);
-      Serial.println("LDR is DARK, LED is OFF, Darkness will consume us all");
+      Serial.println("LDR is DARK, LED is ON");
     }
 
     //MOTION PIR
@@ -218,7 +219,7 @@ void loop() {
     if (pirStat == HIGH) {   // if motion detected
       //digitalWrite(lamp, HIGH);  // turn LED ON
       Serial.println("Hey I got you!!!");
-      client.publish("room/pir", "Hey I got you!!!");
+      client.publish("room/pir", "Hey I found something!!!");
     }
     else {
       //digitalWrite(lamp, LOW); // turn LED OFF if we have no motion
@@ -234,7 +235,6 @@ void loop() {
     Serial.print(hic);
     Serial.println(" *C ");
 
-    // Serial.print(hif);
-    // Serial.println(" *F");
+
   }
 }
