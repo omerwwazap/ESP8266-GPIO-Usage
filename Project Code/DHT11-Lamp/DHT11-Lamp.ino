@@ -18,7 +18,7 @@ Servo myservo;
 
 // Change the credentials below, so your ESP8266 connects to your router
 const char* ssid = "-";
-const char* password = -;
+const char* password = "-";
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
@@ -33,8 +33,12 @@ const int DHTPin = 5;
 // Lamp - LED - GPIO 4 = D2 on ESP-12E NodeMCU board
 const int lamp = 4;
 
-// LDR - Analof In  on ESP-12E NodeMCU board
+// LDR - Analof In  on ESP-12E NodeMCU board A0
 const int ldrPin = A0;
+
+// MOTION PIR
+int pirPin = 15;     // PIR Out pin D8
+int pirStat = 0;     // PIR status
 
 // Initialize DHT sensor.
 DHT dht(DHTPin, DHTTYPE);
@@ -89,13 +93,12 @@ void callback(char* topic, byte* message, unsigned int length) {
       digitalWrite(lamp, LOW);
       Serial.print("Off");
     }
-  } else if (strcmp(topic, "room/servo") == 0) {//SERVO PART
-    Serial.print("");
+  } else if (strcmp(topic, "room/servo") == 0) { //SERVO PART
     int resultado = string.toInt();
     int pos = map(resultado, 1, 100, 0, 180);
     Serial.println(pos);
     myservo.write(pos);
-    delay(1);
+    delay(1000);
   }
 
   Serial.println();
@@ -139,18 +142,22 @@ void reconnect() {
 // Sets your mqtt broker and sets the callback function
 // The callback function is what receives messages and actually controls the LEDs
 void setup() {
+  //LED
   pinMode(lamp, OUTPUT);
 
+  //DHT
   dht.begin();
 
+  //Servo
+  myservo.attach(12);// attaches the servo on pin 14 to the servo object - D5
 
-  myservo.attach(2);// attaches the servo on pin 9 to the servo object
+  //PIR
+  pinMode(pirPin, INPUT);
 
   Serial.begin(115200);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
-
 }
 
 // For this project, you don't need to change anything in the loop function. Basically it ensures that you ESP is connected to your broker
@@ -206,6 +213,17 @@ void loop() {
       Serial.println("LDR is DARK, LED is OFF, Darkness will consume us all");
     }
 
+    //MOTION PIR
+    pirStat = digitalRead(pirPin);
+    if (pirStat == HIGH) {   // if motion detected
+      //digitalWrite(lamp, HIGH);  // turn LED ON
+      Serial.println("Hey I got you!!!");
+      client.publish("room/pir", "1");
+    }
+    else {
+      //digitalWrite(lamp, LOW); // turn LED OFF if we have no motion
+      client.publish("room/pir", "0");
+    }
     Serial.print("Humidity: ");
     Serial.print(h);
     Serial.print(" %\t Temperature: ");
