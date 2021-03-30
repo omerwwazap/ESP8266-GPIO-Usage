@@ -10,7 +10,7 @@ All Diagrams are made by me and are tested before i upload.
 
 ### Project Idea
 
-This project is made to be used in our University course CTIS-477 - System Engineering.
+This project is made to be used in our University course: **CTIS-477 - System Engineering**
 For this course we have to make a small **Smart Home Automation System**, as such i have decided to do the following;
 
 Have a dashboard panel accessible by a web browser and will use 3 sensors:
