@@ -6,7 +6,7 @@ All Diagrams are made by me and are tested before i upload.
 
 **SLS Dashboard - V1.0**|
 |:-------------------------:|
-![Prototype - V1.0](https://github.com/omerwwazap/ESP8266-GPIO-Usage/blob/main/Project%20Documentation/Screenshot%202021-03-31%20012930.jpg)  |
+![Prototype - V1.0](https://github.com/omerwwazap/ESP8266-GPIO-Usage/blob/main/Project%20Documentation/Dashboard.jpg)  |
 
 ### Project Idea
 
