@@ -8,10 +8,6 @@ All Diagrams are made by me and are tested before i upload.
 |:-------------------------:|
 ![Prototype - V1.0](https://github.com/omerwwazap/ESP8266-GPIO-Usage/blob/main/Project%20Documentation/Screenshot%202021-03-31%20012930.jpg)  |
 
-**SLS Hardware Diagram - V1.0**|
-|:-------------------------:|
-![]()  |
-
 ### Project Idea
 
 This project is made to be used in our University course CTIS-477 - System Engineering.
@@ -53,7 +49,9 @@ So what will these sensors do?
 
 ### Diagrams
 
-- Will be added
+**SLS Hardware Diagram - V1.0**|
+|:-------------------------:|
+![]()  |
 
 ### Used Sources
 
