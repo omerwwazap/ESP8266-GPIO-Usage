@@ -17,8 +17,8 @@ Servo myservo;
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 // Change the credentials below, so your ESP8266 connects to your router
-const char* ssid = "AirTies_5341ww1";
-const char* password = "TdWnzbdRi7204";
+const char* ssid = "-";
+const char* password = -;
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
@@ -63,22 +63,23 @@ void setup_wifi() {
 // This functions is executed when some device publishes a message to a topic that your ESP8266 is subscribed to
 // Change the function below to add logic to your program, so when a device publishes a message to a topic that
 // your ESP8266 is subscribed you can actually do something
-void callback(String topic, byte* message, unsigned int length) {
+void callback(char* topic, byte* message, unsigned int length) {
   Serial.print("Message arrived on topic: ");
   Serial.print(topic);
   Serial.print(". Message: ");
   String messageTemp;
+  String string;
 
   for (int i = 0; i < length; i++) {
     Serial.print((char)message[i]);
     messageTemp += (char)message[i];
   }
+  string = messageTemp;
   Serial.println();
 
-  // Feel free to add more if statements to control more GPIOs with MQTT
 
   // If a message is received on the topic room/lamp, you check if the message is either on or off. Turns the lamp GPIO according to the message
-  if (topic == "room/lamp") {
+  if (strcmp(topic, "room/lamp") == 0) {
     Serial.print("Changing Room lamp to ");
     if (messageTemp == "on") {
       digitalWrite(lamp, HIGH);
@@ -88,16 +89,8 @@ void callback(String topic, byte* message, unsigned int length) {
       digitalWrite(lamp, LOW);
       Serial.print("Off");
     }
-  }
-
-  //SERVO PART
-  String string;
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)message[i]);
-    string += ((char)message[i]);
-  }
-  if (topic == "servo") {
-    Serial.print(" ");
+  } else if (strcmp(topic, "room/servo") == 0) {//SERVO PART
+    Serial.print("");
     int resultado = string.toInt();
     int pos = map(resultado, 1, 100, 0, 180);
     Serial.println(pos);
@@ -131,6 +124,7 @@ void reconnect() {
       // Subscribe or resubscribe to a topic
       // You can subscribe to more topics (to control more LEDs in this example)
       client.subscribe("room/lamp");
+      client.subscribe("room/servo");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
