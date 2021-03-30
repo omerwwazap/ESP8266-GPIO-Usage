@@ -17,8 +17,8 @@ Servo myservo;
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 // Change the credentials below, so your ESP8266 connects to your router
-const char* ssid = "-";
-const char* password = "-";
+const char* ssid = "AirTies_5341ww1";
+const char* password = "TdWnzbdRi7204";
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
@@ -98,7 +98,7 @@ void callback(char* topic, byte* message, unsigned int length) {
     int pos = map(resultado, 1, 100, 0, 180);
     Serial.println(pos);
     myservo.write(pos);
-    delay(1000);
+    
   }
 
   Serial.println();
@@ -218,11 +218,11 @@ void loop() {
     if (pirStat == HIGH) {   // if motion detected
       //digitalWrite(lamp, HIGH);  // turn LED ON
       Serial.println("Hey I got you!!!");
-      client.publish("room/pir", "1");
+      client.publish("room/pir", "Hey I got you!!!");
     }
     else {
       //digitalWrite(lamp, LOW); // turn LED OFF if we have no motion
-      client.publish("room/pir", "0");
+      client.publish("room/pir", "No Movement");
     }
     Serial.print("Humidity: ");
     Serial.print(h);
