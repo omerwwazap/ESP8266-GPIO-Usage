@@ -7,6 +7,8 @@
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+#include <Servo.h>
+Servo myservo;
 #include "DHT.h"
 
 // Uncomment one of the lines bellow for whatever DHT sensor type you're using!
@@ -15,8 +17,8 @@
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 // Change the credentials below, so your ESP8266 connects to your router
-const char* ssid = "---";
-const char* password = "---";
+const char* ssid = "AirTies_5341ww1";
+const char* password = "TdWnzbdRi7204";
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
@@ -30,6 +32,9 @@ const int DHTPin = 5;
 
 // Lamp - LED - GPIO 4 = D2 on ESP-12E NodeMCU board
 const int lamp = 4;
+
+// LDR - Analof In  on ESP-12E NodeMCU board
+const int ldrPin = A0;
 
 // Initialize DHT sensor.
 DHT dht(DHTPin, DHTTYPE);
@@ -84,6 +89,22 @@ void callback(String topic, byte* message, unsigned int length) {
       Serial.print("Off");
     }
   }
+
+  //SERVO PART
+  String string;
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)message[i]);
+    string += ((char)message[i]);
+  }
+  if (topic == "servo") {
+    Serial.print(" ");
+    int resultado = string.toInt();
+    int pos = map(resultado, 1, 100, 0, 180);
+    Serial.println(pos);
+    myservo.write(pos);
+    delay(1);
+  }
+
   Serial.println();
 }
 
@@ -127,6 +148,9 @@ void setup() {
   pinMode(lamp, OUTPUT);
 
   dht.begin();
+
+
+  myservo.attach(2);// attaches the servo on pin 9 to the servo object
 
   Serial.begin(115200);
   setup_wifi();
@@ -178,6 +202,16 @@ void loop() {
     client.publish("room/temperature", temperatureTemp);
     client.publish("room/humidity", humidityTemp);
 
+    // LDR PART
+    int ldrStatus = analogRead(ldrPin);
+    if (ldrStatus <= 300) {
+      digitalWrite(lamp, HIGH);
+      Serial.println("LDR is DARK, LED is ON, Let There Be Light");
+    } else {
+      digitalWrite(lamp, LOW);
+      Serial.println("LDR is DARK, LED is OFF, Darkness will consume us all");
+    }
+
     Serial.print("Humidity: ");
     Serial.print(h);
     Serial.print(" %\t Temperature: ");
@@ -187,6 +221,7 @@ void loop() {
     Serial.print(" *F\t Heat index: ");
     Serial.print(hic);
     Serial.println(" *C ");
+
     // Serial.print(hif);
     // Serial.println(" *F");
   }
