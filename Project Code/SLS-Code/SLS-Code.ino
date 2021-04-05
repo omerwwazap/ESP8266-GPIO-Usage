@@ -17,8 +17,6 @@ Servo myservo;
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 // Change the credentials below, so your ESP8266 connects to your router
-const char* ssid = "-";
-const char* password = "-";
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
@@ -39,6 +37,8 @@ const int ldrPin = A0;
 // MOTION PIR
 int pirPin = 15;     // PIR Out pin D8
 int pirStat = 0;     // PIR status
+
+int LIGHTSTATE = 0;
 
 // Initialize DHT sensor.
 DHT dht(DHTPin, DHTTYPE);
@@ -87,11 +87,13 @@ void callback(char* topic, byte* message, unsigned int length) {
     Serial.print("Changing Room lamp to ");
     if (messageTemp == "on") {
       digitalWrite(lamp, HIGH);
-      Serial.print("On");
+      Serial.print("Light On");
+      LIGHTSTATE = 1;
     }
     else if (messageTemp == "off") {
       digitalWrite(lamp, LOW);
-      Serial.print("Off");
+      Serial.print("Light Off");
+      LIGHTSTATE = 0;
     }
   } else if (strcmp(topic, "room/servo") == 0) { //SERVO PART
     int resultado = string.toInt();
@@ -205,26 +207,27 @@ void loop() {
 
     // LDR PART
     int ldrStatus = analogRead(ldrPin);
-    Serial.println("ldrStatus: " + ldrStatus);
     if (ldrStatus <= 300) {
-      digitalWrite(lamp, HIGH);
-      Serial.println("LDR is NOT Dark, LED is OFF");
+      Serial.println("LDR is NOT Dark");
+      //digitalWrite(lamp, HIGH);
+      client.publish("room/Sun", "Yes Sun");
     } else {
-      digitalWrite(lamp, LOW);
-      Serial.println("LDR is DARK, LED is ON");
+      //digitalWrite(lamp, LOW);
+      Serial.println("LDR is DARK");
+      client.publish("room/Sun", "No Sun");
     }
 
     //MOTION PIR
     pirStat = digitalRead(pirPin);
-    if (pirStat == HIGH) {   // if motion detected
-      //digitalWrite(lamp, HIGH);  // turn LED ON
+    if (pirStat == HIGH && LIGHTSTATE == 0) {   // if motion detected
       Serial.println("Hey I got you!!!");
       client.publish("room/pir", "Hey I found something!!!");
+      digitalWrite(lamp, HIGH);  // turn LED ON
     }
-    else {
-      //digitalWrite(lamp, LOW); // turn LED OFF if we have no motion
+    else if (pirStat == LOW) {
       client.publish("room/pir", "No Movement");
     }
+
     Serial.print("Humidity: ");
     Serial.print(h);
     Serial.print(" %\t Temperature: ");
