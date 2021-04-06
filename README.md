@@ -47,9 +47,9 @@ So what will these sensors do?
 - 5mm LDR
 - Breadboard
 
-### Software Hardware
+### Software Used
 
-- NODE-RED - [Dashboard](https://flows.nodered.org/node/node-red-dashboard)
+- Node-RED - [Dashboard](https://flows.nodered.org/node/node-red-dashboard)
 
 
 ### Diagrams
