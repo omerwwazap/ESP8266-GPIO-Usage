@@ -36,6 +36,12 @@ So what will these sensors do?
 - Motor
   - From the dashboard the user will be able to activate the motor. To a certain degree.
 
+### Diagrams
+
+**SLS Hardware Diagram - V1.0**|
+|:-------------------------:|
+![SLS Diagram](https://github.com/omerwwazap/ESP8266-GPIO-Usage/blob/main/Project%20Documentation/CTIS477-SLS_bb.png)  |
+
 ### Used Hardware
 
 - NodeMCU V2 ESP8266 Development Board - CP2102
@@ -50,13 +56,6 @@ So what will these sensors do?
 ### Software Used
 
 - Node-RED - [Dashboard](https://flows.nodered.org/node/node-red-dashboard)
-
-
-### Diagrams
-
-**SLS Hardware Diagram - V1.0**|
-|:-------------------------:|
-![]()  |
 
 ### Used Sources
 
