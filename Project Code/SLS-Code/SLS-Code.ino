@@ -17,6 +17,8 @@ Servo myservo;
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 // Change the credentials below, so your ESP8266 connects to your router
+const char* ssid = "TP-Link_ww2";
+const char* password = "TdWnzbdRi7204";
 
 // Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
 const char* mqtt_server = "192.168.1.65";
