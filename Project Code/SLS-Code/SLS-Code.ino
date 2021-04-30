@@ -132,6 +132,7 @@ void reconnect() {
       // You can subscribe to more topics (to control more LEDs in this example)
       client.subscribe("room/lamp");
       client.subscribe("room/servo");
+      client.subscribe("room/pir");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -209,7 +210,8 @@ void loop() {
 
     // LDR PART
     int ldrStatus = analogRead(ldrPin);
-    if (ldrStatus <= 300) {
+    //Serial.println(ldrStatus);
+    if (ldrStatus <= 650) {
       Serial.println("LDR is NOT Dark");
       //digitalWrite(lamp, HIGH);
       client.publish("room/Sun", "Yes Sun");
@@ -224,7 +226,7 @@ void loop() {
     if (pirStat == HIGH && LIGHTSTATE == 0) {   // if motion detected
       Serial.println("Hey I got you!!!");
       client.publish("room/pir", "Hey I found something!!!");
-      digitalWrite(lamp, HIGH);  // turn LED ON
+      client.publish("room/lamp", "on");
     }
     else if (pirStat == LOW) {
       client.publish("room/pir", "No Movement");

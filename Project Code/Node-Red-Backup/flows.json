@@ -1,1 +1,990 @@
-[{"id":"bb69e7a4.44a3e8","type":"tab","label":"Lamp and Temp and Hum","disabled":false,"info":""},{"id":"2fda10a1.561a88","type":"tab","label":"Servo","disabled":false,"info":""},{"id":"b5adab96.c2d14","type":"tab","label":"PIR Sensor","disabled":false,"info":""},{"id":"d40ea086.ee6a4","type":"tab","label":"LDR","disabled":false,"info":""},{"id":"cae40fed.0cb0b","type":"tab","label":"Font Color","disabled":true,"info":""},{"id":"a5a62563.ec3cf","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","reset":false},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Smart Life and Home Security System","hideToolbar":"false","allowSwipe":"false","lockMenu":"icon","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"1216f09f.0e292f","type":"ui_tab","name":"Smart Life and Home Security System (SLS)","icon":"dashboard","order":1,"disabled":false,"hidden":false},{"id":"5b4aced2.d78d98","type":"ui_group","name":"Room Light Control","tab":"1216f09f.0e292f","order":2,"disp":true,"width":"6","collapse":false},{"id":"1924539.d794fac","type":"mqtt-broker","name":"","broker":"localhost","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"1e5c02d5.fe327d","type":"ui_group","name":"Curtain Controls","tab":"1216f09f.0e292f","order":4,"disp":true,"width":"6","collapse":false},{"id":"68b7e41a.f6cafc","type":"ui_group","name":"Motion Alert","tab":"1216f09f.0e292f","order":5,"disp":true,"width":"6","collapse":false},{"id":"d621b105.20a8f8","type":"ui_group","name":"Room Temperature and Humidity","tab":"1216f09f.0e292f","order":3,"disp":true,"width":"6","collapse":false},{"id":"e5ca9a2c.b5e848","type":"ui_spacer","name":"spacer","group":"441fc1cb.439d3","order":5,"width":1,"height":1,"info":"[https://github.com/omerwwazap/ESP8266-GPIO-Usage]()"},{"id":"7b2d5867.571628","type":"ui_link","name":"Github Link","link":"https://github.com/omerwwazap/ESP8266-GPIO-Usage","icon":"github-circle","target":"newtab","order":2},{"id":"b82da486.9fc8d8","type":"ui_group","name":"Signin","tab":"","order":1,"disp":true,"width":"6","collapse":false},{"id":"c35e46a8.b04ce8","type":"ui_group","name":"SensorData","tab":"","order":2,"disp":true,"width":"6","collapse":false},{"id":"4de9506d.e7364","type":"ui_group","name":"History","tab":"","order":3,"disp":true,"width":"6","collapse":false},{"id":"636cd1b3.43b9f8","type":"ui_group","name":"Light Alert","tab":"1216f09f.0e292f","order":5,"disp":true,"width":"6","collapse":false},{"id":"8924e22f.e375e","type":"ui_group","name":"Teste","tab":"d4e79c02.16854","order":1,"disp":false,"width":"6"},{"id":"d4e79c02.16854","type":"ui_tab","name":"LAB","icon":"dashboard"},{"id":"9e2bac96.b321b","type":"ui_group","name":"S1","tab":"62712bbf.888b94","order":1,"disp":false,"width":"6","collapse":false},{"id":"62712bbf.888b94","type":"ui_tab","name":"Home","icon":"dashboard"},{"id":"62b1c8c5.1791b8","type":"ui_chart","z":"bb69e7a4.44a3e8","name":"Temperature","group":"d621b105.20a8f8","order":2,"width":0,"height":0,"label":"Temperature","chartType":"line","legend":"true","xformat":"HH:mm:ss","interpolate":"linear","nodata":"Loading","dot":false,"ymin":"","ymax":"","removeOlder":"3","removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#ff8000","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":650,"y":280,"wires":[[]]},{"id":"f5f25019.ff4b48","type":"ui_gauge","z":"bb69e7a4.44a3e8","name":"Humidity","group":"d621b105.20a8f8","order":3,"width":0,"height":0,"gtype":"gage","title":"Humidity","label":"units","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"25","seg2":"50","x":640,"y":360,"wires":[]},{"id":"f42b4a92.599ab","type":"mqtt in","z":"bb69e7a4.44a3e8","name":"Temp","topic":"room/temperature","qos":"2","datatype":"auto","broker":"1924539.d794fac","x":440,"y":280,"wires":[["62b1c8c5.1791b8"]]},{"id":"fcc7ccd1.75ee9","type":"mqtt out","z":"bb69e7a4.44a3e8","name":"Lamp","topic":"room/lamp","qos":"1","retain":"","broker":"1924539.d794fac","x":650,"y":200,"wires":[]},{"id":"d08fe1cd.73fb1","type":"mqtt in","z":"bb69e7a4.44a3e8","name":"Humidity","topic":"room/humidity","qos":"2","datatype":"auto","broker":"1924539.d794fac","x":460,"y":360,"wires":[["f5f25019.ff4b48","62b1c8c5.1791b8"]]},{"id":"aa9656aa.3f833","type":"ui_switch","z":"bb69e7a4.44a3e8","name":"Lamp","label":"Lamp","tooltip":"","group":"5b4aced2.d78d98","order":1,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"room/Lamp","topicType":"str","style":"","onvalue":"on","onvalueType":"str","onicon":"","oncolor":"","offvalue":"off","offvalueType":"str","officon":"","offcolor":"","animate":false,"x":450,"y":200,"wires":[["fcc7ccd1.75ee9"]]},{"id":"49574ec6.a2c82","type":"mqtt out","z":"2fda10a1.561a88","name":"room/servo","topic":"room/servo","qos":"1","retain":"false","broker":"1924539.d794fac","x":910,"y":240,"wires":[]},{"id":"eb56529a.91ed8","type":"ui_button","z":"2fda10a1.561a88","name":"","group":"1e5c02d5.fe327d","order":1,"width":0,"height":0,"passthru":false,"label":"Min  0%","tooltip":"","color":"black","bgcolor":"","icon":"","payload":"0","payloadType":"num","topic":"room/servo","topicType":"str","x":517.0000305175781,"y":241.66653442382812,"wires":[["456caad3.a6360c"]]},{"id":"12a3d918.fa5797","type":"ui_slider","z":"2fda10a1.561a88","name":"","label":"Servo","tooltip":"","group":"1e5c02d5.fe327d","order":4,"width":0,"height":0,"passthru":true,"outs":"all","topic":"room/servo","topicType":"str","min":0,"max":"100","step":"10","x":514.0000305175781,"y":389.66650390625,"wires":[["456caad3.a6360c"]]},{"id":"75cb23fc.a9e3ac","type":"ui_gauge","z":"2fda10a1.561a88","name":"","group":"1e5c02d5.fe327d","order":5,"width":0,"height":0,"gtype":"donut","title":"Servo position ","label":"position ","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":898,"y":309.66650390625,"wires":[]},{"id":"e92c1db6.d8343","type":"ui_button","z":"2fda10a1.561a88","name":"","group":"1e5c02d5.fe327d","order":3,"width":0,"height":0,"passthru":false,"label":"Max 100%","tooltip":"","color":"black","bgcolor":"","icon":"","payload":"100","payloadType":"num","topic":"room/servo","topicType":"str","x":519.0000305175781,"y":330.33319091796875,"wires":[["456caad3.a6360c"]]},{"id":"456caad3.a6360c","type":"function","z":"2fda10a1.561a88","name":"node","func":"\nreturn msg;","outputs":1,"noerr":0,"x":705.0000610351562,"y":275.3331604003906,"wires":[["49574ec6.a2c82","75cb23fc.a9e3ac","15ee6cd5.10e39b"]]},{"id":"15ee6cd5.10e39b","type":"link out","z":"2fda10a1.561a88","name":"slider","links":["345ab0a5.e1e898"],"x":861,"y":391.3331298828125,"wires":[]},{"id":"345ab0a5.e1e898","type":"link in","z":"2fda10a1.561a88","name":"","links":["15ee6cd5.10e39b"],"x":416.6923351287842,"y":451.7434501647949,"wires":[["12a3d918.fa5797"]]},{"id":"404e6c03.01664c","type":"ui_button","z":"2fda10a1.561a88","name":"","group":"1e5c02d5.fe327d","order":2,"width":0,"height":0,"passthru":false,"label":"50%","tooltip":"","color":"black","bgcolor":"","icon":"","payload":"50","payloadType":"num","topic":"room/servo","topicType":"str","x":508.0000305175781,"y":283.66650390625,"wires":[["456caad3.a6360c"]]},{"id":"3ca59101.18a5e6","type":"comment","z":"2fda10a1.561a88","name":"ESP8266 MQTT Control Servo","info":"","x":582.0000305175781,"y":170.66650390625,"wires":[]},{"id":"e66cfd77.792778","type":"mqtt in","z":"b5adab96.c2d14","name":"room/pir","topic":"room/pir","qos":"2","datatype":"auto","broker":"1924539.d794fac","x":640,"y":280,"wires":[["891a0bbd.b2ab38","7a0b2888.209e7"]]},{"id":"e3216aa1.c1dc8","type":"ui_text","z":"b5adab96.c2d14","group":"68b7e41a.f6cafc","order":1,"width":0,"height":0,"name":"Motion Text","label":"","format":"<font color= {{msg.color}} > {{msg.payload}} </font>","layout":"row-center","x":1050,"y":160,"wires":[]},{"id":"3a3e5149.1b27a6","type":"ui_toast","z":"b5adab96.c2d14","position":"top right","displayTime":"5","highlight":"RED","sendall":false,"outputs":0,"ok":"OK","cancel":"","raw":false,"topic":"Motion Detected","name":"","x":1070,"y":300,"wires":[]},{"id":"891a0bbd.b2ab38","type":"switch","z":"b5adab96.c2d14","name":"0 or 1","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"No Movement","vt":"str"},{"t":"eq","v":"Hey I found something!!!","vt":"str"}],"checkall":"true","repair":false,"outputs":2,"x":850,"y":300,"wires":[[],["3a3e5149.1b27a6"]]},{"id":"d2043307.997f","type":"mqtt in","z":"d40ea086.ee6a4","name":"room/Sun","topic":"room/Sun","qos":"2","datatype":"auto","broker":"1924539.d794fac","x":540,"y":420,"wires":[["62c2e98f.be7b78","83848b40.f5504"]]},{"id":"5faf28e9.6d60a","type":"ui_toast","z":"d40ea086.ee6a4","position":"top right","displayTime":"5","highlight":"YELLOW","sendall":false,"outputs":0,"ok":"OK","cancel":"","raw":false,"topic":"Sun Came Up","name":"","x":970,"y":440,"wires":[]},{"id":"62c2e98f.be7b78","type":"switch","z":"d40ea086.ee6a4","name":"1/2","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"No Sun","vt":"str"},{"t":"eq","v":"Yes Sun","vt":"str"}],"checkall":"true","repair":false,"outputs":2,"x":750,"y":440,"wires":[[],["5faf28e9.6d60a"]]},{"id":"b80cb9f6.df2e38","type":"ui_text","z":"cae40fed.0cb0b","group":"8924e22f.e375e","order":1,"width":"0","height":"0","name":"","label":"","format":"<font color= {{msg.color}} > {{msg.payload}} </font>","layout":"row-left","x":790,"y":160,"wires":[]},{"id":"84993741.45c658","type":"inject","z":"cae40fed.0cb0b","name":"","repeat":"","crontab":"","once":false,"onceDelay":"","topic":"","payload":"disarmed","payloadType":"str","x":383.00000762939453,"y":107.00000190734863,"wires":[["fdb2fcd1.0e76"]]},{"id":"fdb2fcd1.0e76","type":"function","z":"cae40fed.0cb0b","name":"Color Mapping","func":"switch (msg.payload) {\n\ncase \"disarmed\" : \n    msg.color = \"lime\";\n    break;\n    \ncase \"pending\" : \n    msg.color = \"yellow\";\n    break;\n    \ndefault : \n    msg.color = \"red\";\n    break;\n}\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":586.1000556945801,"y":172.60000228881836,"wires":[["b80cb9f6.df2e38"]]},{"id":"bb25a8a.3bfb258","type":"inject","z":"cae40fed.0cb0b","name":"","repeat":"","crontab":"","once":false,"onceDelay":"","topic":"","payload":"pending","payloadType":"str","x":390.00000762939453,"y":154.00000190734863,"wires":[["fdb2fcd1.0e76"]]},{"id":"d8b7282e.5330f8","type":"inject","z":"cae40fed.0cb0b","name":"","repeat":"","crontab":"","once":false,"onceDelay":"","topic":"","payload":"armed_home","payloadType":"str","x":373.00000762939453,"y":201.00000286102295,"wires":[["fdb2fcd1.0e76"]]},{"id":"71bdd81d.6f9f18","type":"inject","z":"cae40fed.0cb0b","name":"","repeat":"","crontab":"","once":false,"onceDelay":"","topic":"","payload":"armed_away","payloadType":"str","x":371.00000762939453,"y":247.00000381469727,"wires":[["fdb2fcd1.0e76"]]},{"id":"71e418f8.c42c08","type":"ui_text","z":"d40ea086.ee6a4","group":"636cd1b3.43b9f8","order":1,"width":"0","height":"0","name":"Sun Text","label":"","format":"<font color= {{msg.color}} > {{msg.payload}} </font>","layout":"row-left","x":1020,"y":320,"wires":[]},{"id":"83848b40.f5504","type":"function","z":"d40ea086.ee6a4","name":"Color Mapping","func":"switch (msg) {\n\ncase \"No Sun\" : \n    msg.color = \"Black\";\n    break;\n    \ncase \"Yes Sun\" : \n    msg.color = \"Red\";\n    break;\n    \ndefault : \n    msg.color = \"Black\";\n    break;\n}\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":780,"y":320,"wires":[["71e418f8.c42c08"]]},{"id":"7a0b2888.209e7","type":"function","z":"b5adab96.c2d14","name":"Color Mapping","func":"switch (msg) {\n\ncase \"No Movement\" : \n    msg.color = \"black\";\n    break;\n    \ncase \"Hey I found something!!!\" : \n    msg.color = \"red\";\n    break;\n    \ndefault : \n    msg.color = \"black\";\n    break;\n}\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":840,"y":160,"wires":[["e3216aa1.c1dc8"]]}]
+[
+    {
+        "id": "bb69e7a4.44a3e8",
+        "type": "tab",
+        "label": "Lamp and Temp and Hum",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2fda10a1.561a88",
+        "type": "tab",
+        "label": "Servo",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b5adab96.c2d14",
+        "type": "tab",
+        "label": "PIR Sensor",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d40ea086.ee6a4",
+        "type": "tab",
+        "label": "LDR",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cae40fed.0cb0b",
+        "type": "tab",
+        "label": "Font Color",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "a5a62563.ec3cf",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Smart Life and Home Security System",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "icon",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1216f09f.0e292f",
+        "type": "ui_tab",
+        "name": "Smart Life and Home Security System (SLS)",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5b4aced2.d78d98",
+        "type": "ui_group",
+        "name": "Room Light Control",
+        "tab": "1216f09f.0e292f",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1924539.d794fac",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "1e5c02d5.fe327d",
+        "type": "ui_group",
+        "name": "Curtain Controls",
+        "tab": "1216f09f.0e292f",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "68b7e41a.f6cafc",
+        "type": "ui_group",
+        "name": "Motion Alert",
+        "tab": "1216f09f.0e292f",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d621b105.20a8f8",
+        "type": "ui_group",
+        "name": "Room Temperature and Humidity",
+        "tab": "1216f09f.0e292f",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e5ca9a2c.b5e848",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "441fc1cb.439d3",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "info": "[https://github.com/omerwwazap/ESP8266-GPIO-Usage]()"
+    },
+    {
+        "id": "7b2d5867.571628",
+        "type": "ui_link",
+        "name": "Github Link",
+        "link": "https://github.com/omerwwazap/ESP8266-GPIO-Usage",
+        "icon": "github-circle",
+        "target": "newtab",
+        "order": 2
+    },
+    {
+        "id": "b82da486.9fc8d8",
+        "type": "ui_group",
+        "name": "Signin",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c35e46a8.b04ce8",
+        "type": "ui_group",
+        "name": "SensorData",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4de9506d.e7364",
+        "type": "ui_group",
+        "name": "History",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "636cd1b3.43b9f8",
+        "type": "ui_group",
+        "name": "Light Alert",
+        "tab": "1216f09f.0e292f",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8924e22f.e375e",
+        "type": "ui_group",
+        "name": "Teste",
+        "tab": "d4e79c02.16854",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "d4e79c02.16854",
+        "type": "ui_tab",
+        "name": "LAB",
+        "icon": "dashboard"
+    },
+    {
+        "id": "9e2bac96.b321b",
+        "type": "ui_group",
+        "name": "S1",
+        "tab": "62712bbf.888b94",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "62712bbf.888b94",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "62b1c8c5.1791b8",
+        "type": "ui_chart",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Temperature",
+        "group": "d621b105.20a8f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Loading",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "3",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff8000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 650,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5f25019.ff4b48",
+        "type": "ui_gauge",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Humidity",
+        "group": "d621b105.20a8f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "50",
+        "x": 640,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f42b4a92.599ab",
+        "type": "mqtt in",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Temp",
+        "topic": "room/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1924539.d794fac",
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "62b1c8c5.1791b8"
+            ]
+        ]
+    },
+    {
+        "id": "fcc7ccd1.75ee9",
+        "type": "mqtt out",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Lamp",
+        "topic": "room/lamp",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1924539.d794fac",
+        "x": 650,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d08fe1cd.73fb1",
+        "type": "mqtt in",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Humidity",
+        "topic": "room/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1924539.d794fac",
+        "nl": false,
+        "rap": false,
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "f5f25019.ff4b48",
+                "62b1c8c5.1791b8"
+            ]
+        ]
+    },
+    {
+        "id": "aa9656aa.3f833",
+        "type": "ui_switch",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Lamp",
+        "label": "Lamp",
+        "tooltip": "",
+        "group": "5b4aced2.d78d98",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "room/Lamp",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 450,
+        "y": 200,
+        "wires": [
+            [
+                "fcc7ccd1.75ee9"
+            ]
+        ]
+    },
+    {
+        "id": "49574ec6.a2c82",
+        "type": "mqtt out",
+        "z": "2fda10a1.561a88",
+        "name": "room/servo",
+        "topic": "room/servo",
+        "qos": "1",
+        "retain": "false",
+        "broker": "1924539.d794fac",
+        "x": 910,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "eb56529a.91ed8",
+        "type": "ui_button",
+        "z": "2fda10a1.561a88",
+        "name": "",
+        "group": "1e5c02d5.fe327d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Min  0%",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "room/servo",
+        "topicType": "str",
+        "x": 517.0000305175781,
+        "y": 241.66653442382812,
+        "wires": [
+            [
+                "456caad3.a6360c"
+            ]
+        ]
+    },
+    {
+        "id": "12a3d918.fa5797",
+        "type": "ui_slider",
+        "z": "2fda10a1.561a88",
+        "name": "",
+        "label": "Servo",
+        "tooltip": "",
+        "group": "1e5c02d5.fe327d",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "room/servo",
+        "topicType": "str",
+        "min": 0,
+        "max": "100",
+        "step": "10",
+        "x": 514.0000305175781,
+        "y": 389.66650390625,
+        "wires": [
+            [
+                "456caad3.a6360c"
+            ]
+        ]
+    },
+    {
+        "id": "75cb23fc.a9e3ac",
+        "type": "ui_gauge",
+        "z": "2fda10a1.561a88",
+        "name": "",
+        "group": "1e5c02d5.fe327d",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Servo position ",
+        "label": "position ",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 898,
+        "y": 309.66650390625,
+        "wires": []
+    },
+    {
+        "id": "e92c1db6.d8343",
+        "type": "ui_button",
+        "z": "2fda10a1.561a88",
+        "name": "",
+        "group": "1e5c02d5.fe327d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Max 100%",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "100",
+        "payloadType": "num",
+        "topic": "room/servo",
+        "topicType": "str",
+        "x": 519.0000305175781,
+        "y": 330.33319091796875,
+        "wires": [
+            [
+                "456caad3.a6360c"
+            ]
+        ]
+    },
+    {
+        "id": "456caad3.a6360c",
+        "type": "function",
+        "z": "2fda10a1.561a88",
+        "name": "node",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 705.0000610351562,
+        "y": 275.3331604003906,
+        "wires": [
+            [
+                "49574ec6.a2c82",
+                "75cb23fc.a9e3ac",
+                "15ee6cd5.10e39b"
+            ]
+        ]
+    },
+    {
+        "id": "15ee6cd5.10e39b",
+        "type": "link out",
+        "z": "2fda10a1.561a88",
+        "name": "slider",
+        "links": [
+            "345ab0a5.e1e898"
+        ],
+        "x": 861,
+        "y": 391.3331298828125,
+        "wires": []
+    },
+    {
+        "id": "345ab0a5.e1e898",
+        "type": "link in",
+        "z": "2fda10a1.561a88",
+        "name": "",
+        "links": [
+            "15ee6cd5.10e39b"
+        ],
+        "x": 416.6923351287842,
+        "y": 451.7434501647949,
+        "wires": [
+            [
+                "12a3d918.fa5797"
+            ]
+        ]
+    },
+    {
+        "id": "404e6c03.01664c",
+        "type": "ui_button",
+        "z": "2fda10a1.561a88",
+        "name": "",
+        "group": "1e5c02d5.fe327d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "50%",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "50",
+        "payloadType": "num",
+        "topic": "room/servo",
+        "topicType": "str",
+        "x": 508.0000305175781,
+        "y": 283.66650390625,
+        "wires": [
+            [
+                "456caad3.a6360c"
+            ]
+        ]
+    },
+    {
+        "id": "3ca59101.18a5e6",
+        "type": "comment",
+        "z": "2fda10a1.561a88",
+        "name": "ESP8266 MQTT Control Servo",
+        "info": "",
+        "x": 582.0000305175781,
+        "y": 170.66650390625,
+        "wires": []
+    },
+    {
+        "id": "e66cfd77.792778",
+        "type": "mqtt in",
+        "z": "b5adab96.c2d14",
+        "name": "room/pir",
+        "topic": "room/pir",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1924539.d794fac",
+        "x": 640,
+        "y": 280,
+        "wires": [
+            [
+                "891a0bbd.b2ab38",
+                "7a0b2888.209e7"
+            ]
+        ]
+    },
+    {
+        "id": "e3216aa1.c1dc8",
+        "type": "ui_text",
+        "z": "b5adab96.c2d14",
+        "group": "68b7e41a.f6cafc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Motion Text",
+        "label": "",
+        "format": "<font color= {{msg.color}} > {{msg.payload}} </font>",
+        "layout": "row-center",
+        "x": 1050,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3a3e5149.1b27a6",
+        "type": "ui_toast",
+        "z": "b5adab96.c2d14",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "RED",
+        "sendall": false,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "Motion Detected",
+        "name": "",
+        "x": 1070,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "891a0bbd.b2ab38",
+        "type": "switch",
+        "z": "b5adab96.c2d14",
+        "name": "0 or 1",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "No Movement",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Hey I found something!!!",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [],
+            [
+                "3a3e5149.1b27a6"
+            ]
+        ]
+    },
+    {
+        "id": "d2043307.997f",
+        "type": "mqtt in",
+        "z": "d40ea086.ee6a4",
+        "name": "room/Sun",
+        "topic": "room/Sun",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1924539.d794fac",
+        "x": 540,
+        "y": 420,
+        "wires": [
+            [
+                "62c2e98f.be7b78",
+                "83848b40.f5504"
+            ]
+        ]
+    },
+    {
+        "id": "5faf28e9.6d60a",
+        "type": "ui_toast",
+        "z": "d40ea086.ee6a4",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "YELLOW",
+        "sendall": false,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "Sun Came Up",
+        "name": "",
+        "x": 970,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "62c2e98f.be7b78",
+        "type": "switch",
+        "z": "d40ea086.ee6a4",
+        "name": "1/2",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "No Sun",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Yes Sun",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 440,
+        "wires": [
+            [],
+            [
+                "5faf28e9.6d60a"
+            ]
+        ]
+    },
+    {
+        "id": "b80cb9f6.df2e38",
+        "type": "ui_text",
+        "z": "cae40fed.0cb0b",
+        "group": "8924e22f.e375e",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "",
+        "format": "<font color= {{msg.color}} > {{msg.payload}} </font>",
+        "layout": "row-left",
+        "x": 790,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "84993741.45c658",
+        "type": "inject",
+        "z": "cae40fed.0cb0b",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "disarmed",
+        "payloadType": "str",
+        "x": 383.00000762939453,
+        "y": 107.00000190734863,
+        "wires": [
+            [
+                "fdb2fcd1.0e76"
+            ]
+        ]
+    },
+    {
+        "id": "fdb2fcd1.0e76",
+        "type": "function",
+        "z": "cae40fed.0cb0b",
+        "name": "Color Mapping",
+        "func": "switch (msg.payload) {\n\ncase \"disarmed\" : \n    msg.color = \"lime\";\n    break;\n    \ncase \"pending\" : \n    msg.color = \"yellow\";\n    break;\n    \ndefault : \n    msg.color = \"red\";\n    break;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 586.1000556945801,
+        "y": 172.60000228881836,
+        "wires": [
+            [
+                "b80cb9f6.df2e38"
+            ]
+        ]
+    },
+    {
+        "id": "bb25a8a.3bfb258",
+        "type": "inject",
+        "z": "cae40fed.0cb0b",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "pending",
+        "payloadType": "str",
+        "x": 390.00000762939453,
+        "y": 154.00000190734863,
+        "wires": [
+            [
+                "fdb2fcd1.0e76"
+            ]
+        ]
+    },
+    {
+        "id": "d8b7282e.5330f8",
+        "type": "inject",
+        "z": "cae40fed.0cb0b",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "armed_home",
+        "payloadType": "str",
+        "x": 373.00000762939453,
+        "y": 201.00000286102295,
+        "wires": [
+            [
+                "fdb2fcd1.0e76"
+            ]
+        ]
+    },
+    {
+        "id": "71bdd81d.6f9f18",
+        "type": "inject",
+        "z": "cae40fed.0cb0b",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "armed_away",
+        "payloadType": "str",
+        "x": 371.00000762939453,
+        "y": 247.00000381469727,
+        "wires": [
+            [
+                "fdb2fcd1.0e76"
+            ]
+        ]
+    },
+    {
+        "id": "71e418f8.c42c08",
+        "type": "ui_text",
+        "z": "d40ea086.ee6a4",
+        "group": "636cd1b3.43b9f8",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "Sun Text",
+        "label": "",
+        "format": "<font color= {{msg.color}} > {{msg.payload}} </font>",
+        "layout": "row-left",
+        "x": 1020,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "83848b40.f5504",
+        "type": "function",
+        "z": "d40ea086.ee6a4",
+        "name": "Color Mapping",
+        "func": "switch (msg) {\n\ncase \"No Sun\" : \n    msg.color = \"Black\";\n    break;\n    \ncase \"Yes Sun\" : \n    msg.color = \"Red\";\n    break;\n    \ndefault : \n    msg.color = \"Black\";\n    break;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "71e418f8.c42c08"
+            ]
+        ]
+    },
+    {
+        "id": "7a0b2888.209e7",
+        "type": "function",
+        "z": "b5adab96.c2d14",
+        "name": "Color Mapping",
+        "func": "switch (msg) {\n\ncase \"No Movement\" : \n    msg.color = \"black\";\n    break;\n    \ncase \"Hey I found something!!!\" : \n    msg.color = \"red\";\n    break;\n    \ndefault : \n    msg.color = \"black\";\n    break;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 840,
+        "y": 160,
+        "wires": [
+            [
+                "e3216aa1.c1dc8"
+            ]
+        ]
+    },
+    {
+        "id": "3cceb7b1.7adcc",
+        "type": "mqtt in",
+        "z": "bb69e7a4.44a3e8",
+        "name": "Lamp",
+        "topic": "room/lamp",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1924539.d794fac",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "aa9656aa.3f833"
+            ]
+        ]
+    }
+]
