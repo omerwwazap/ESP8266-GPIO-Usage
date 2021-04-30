@@ -1,3 +1,4 @@
+
 /*****
 
   All the resources for this project:
@@ -97,7 +98,9 @@ void callback(char* topic, byte* message, unsigned int length) {
       Serial.print("Light Off");
       LIGHTSTATE = 0;
     }
-  } else if (strcmp(topic, "room/servo") == 0) { //SERVO PART
+  } 
+
+  if (strcmp(topic, "room/servo") == 0) { //SERVO PART
     int resultado = string.toInt();
     int pos = map(resultado, 1, 100, 0, 180);
     Serial.println(pos);
@@ -211,7 +214,7 @@ void loop() {
     // LDR PART
     int ldrStatus = analogRead(ldrPin);
     //Serial.println(ldrStatus);
-    if (ldrStatus <= 650) {
+    if (ldrStatus <= 550) {
       Serial.println("LDR is NOT Dark");
       //digitalWrite(lamp, HIGH);
       client.publish("room/Sun", "Yes Sun");
