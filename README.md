@@ -1,4 +1,4 @@
-# ESP8266-GPIO-Usage [![Maintenance](https://img.shields.io/badge/Repo_Status-Active-Green.svg)](https://shields.io/)
+# ESP8266-GPIO-Usage [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 
 ESP8266 - For Hobby Stuff and System Engineering Course - CTIS477
 
